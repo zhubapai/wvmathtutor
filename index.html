@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="High-quality math tutoring in Bridgeport, WV and online. SAT 1560, AP Calculus BC 5, WV State Math Field Day Champion."/>
+  <title>Leroy Song — Math Tutoring</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0B1F3A;
+      --blue:   #1A5CDB;
+      --gold:   #D4A017;
+      --cream:  #F8F7F4;
+      --gray:   #64748B;
+      --border: #E2E8F0;
+      --white:  #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--navy); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(11,31,58,0.97);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-logo {
+      font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: -.01em;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      font-size: .875rem; font-weight: 500; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: .85rem; font-weight: 600;
+      padding: .55rem 1.25rem; border: none; border-radius: 6px;
+      cursor: pointer; text-decoration: none; transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: .85; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 50vh;
+      background: var(--navy);
+      display: flex; align-items: center;
+      padding: 8rem 2.5rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,92,219,0.18) 0%, transparent 70%);
+    }
+    /* Subtle equation watermark */
+    .hero-watermark {
+      position: absolute; right: 5%; top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(6rem, 14vw, 14rem);
+      font-family: 'Playfair Display', serif;
+      font-style: italic; color: rgba(255,255,255,0.03);
+      line-height: 1; pointer-events: none; user-select: none;
+      white-space: nowrap;
+    }
+    .hero-inner { position: relative; max-width: 680px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .78rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 24px; height: 2px; background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700; line-height: 1.12; color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: #7EB3FF; }
+    .hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.65);
+      line-height: 1.75; max-width: 520px; margin-bottom: 2rem;
+    }
+
+    /* Score badges */
+    .badges {
+      display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.5rem;
+    }
+    .badge {
+      display: flex; align-items: center; gap: .4rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px; padding: .45rem .85rem;
+      font-size: .82rem; font-weight: 600; color: rgba(255,255,255,0.85);
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .badge-community {
+        background: rgba(212, 160, 23, 0.12);
+        border: 1px solid rgba(212, 160, 23, 0.35);
+        color: var(--gold);
+    }
+    .hero-btns { display: flex; gap: .85rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--blue); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 600;
+      padding: .85rem 1.75rem; border: none; border-radius: 8px;
+      cursor: pointer; text-decoration: none; transition: opacity .2s;
+    }
+    .btn-primary:hover { opacity: .85; }
+    .btn-ghost {
+      background: transparent; color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 500;
+      padding: .85rem 1.75rem;
+      border: 1.5px solid rgba(255,255,255,0.25); border-radius: 8px;
+      cursor: pointer; text-decoration: none; transition: border-color .2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 5.5rem 2.5rem; }
+    .inner { max-width: 960px; margin: 0 auto; }
+    .eyebrow {
+      font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: .6rem;
+    }
+    .section-h {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 700; color: var(--navy); margin-bottom: 1rem; line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--gray); line-height: 1.75;
+      max-width: 520px; margin-bottom: 3rem;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+    }
+    .service-item {
+      background: var(--white); padding: 1.75rem;
+      transition: background .2s;
+    }
+    .service-item:hover { background: #F0F5FF; }
+    .service-item h3 { font-size: .95rem; font-weight: 700; margin-bottom: .35rem; }
+    .service-item p { font-size: .85rem; color: var(--gray); line-height: 1.5; }
+
+.services-category-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 2.5rem 0 1rem;
+}
+.services-category-title:first-of-type {
+  margin-top: 0;
+}
+
+/* Optional: tighten the grid to 2 columns on mobile instead of 1, so it feels less sparse */
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-item {
+    padding: 1.25rem;
+  }
+  .service-item h3 {
+    font-size: .85rem;
+  }
+}
+
+    /* ── PROMISE BANNER ── */
+    .promise-banner {
+      background: var(--blue); padding: 3rem 2.5rem;
+      text-align: center;
+    }
+    .promise-banner p {
+      font-size: 1.15rem; color: var(--white); line-height: 1.7;
+      max-width: 620px; margin: 0 auto;
+    }
+    .promise-banner strong { font-weight: 700; }
+    .promise-banner .guarantee {
+      display: inline-block; margin-top: 1rem;
+      background: rgba(255,255,255,0.15); border-radius: 6px;
+      padding: .45rem 1rem; font-size: .85rem; font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ── PRICING ── */
+.pricing { background: var(--white); }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.pricing-card {
+  position: relative;
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
+}
+
+.pricing-card.featured {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.pricing-tag {
+  position: absolute; top: -12px; right: 1.75rem;
+  background: var(--gold); color: var(--navy);
+  font-size: .72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
+  padding: .3rem .75rem; border-radius: 20px;
+}
+
+.pricing-card h3 {
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--navy); margin-bottom: .5rem;
+}
+.pricing-card.featured h3 { color: var(--white); }
+
+.pricing-desc {
+  font-size: .87rem; color: var(--gray); line-height: 1.55;
+  margin-bottom: 1.5rem; min-height: 2.6em;
+}
+.pricing-card.featured .pricing-desc { color: rgba(255,255,255,0.6); }
+
+.pricing-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem; font-weight: 700;
+  color: var(--blue); margin-bottom: 1.5rem;
+  display: flex; align-items: baseline; gap: .15rem;
+}
+.pricing-card.featured .pricing-amount { color: var(--gold); }
+.pricing-amount .currency { font-size: 1.4rem; }
+.pricing-amount .per {
+  font-family: 'Inter', sans-serif;
+  font-size: .85rem; font-weight: 500;
+  color: var(--gray); margin-left: .3rem;
+}
+.pricing-card.featured .pricing-amount .per { color: rgba(255,255,255,0.5); }
+
+.pricing-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: .6rem; margin-bottom: 2rem;
+}
+.pricing-list li {
+  display: flex; align-items: flex-start; gap: .6rem;
+  font-size: .87rem; color: var(--navy); line-height: 1.5;
+}
+.pricing-card.featured .pricing-list li { color: rgba(255,255,255,0.8); }
+.pricing-list li::before {
+  content: '✓'; flex-shrink: 0; font-weight: 700; color: var(--blue);
+}
+.pricing-card.featured .pricing-list li::before { color: var(--gold); }
+
+.pricing-btn {
+  display: block; text-align: center;
+  background: var(--blue); color: var(--white);
+  font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 600;
+  padding: .8rem; border-radius: 8px;
+  text-decoration: none; transition: opacity .2s;
+}
+.pricing-btn:hover { opacity: .85; }
+.pricing-btn-featured { background: var(--gold); color: var(--navy); }
+
+.pricing-note {
+  font-size: .87rem; color: var(--gray); line-height: 1.6;
+  max-width: 520px;
+}
+.link-inline { color: var(--blue); font-weight: 600; text-decoration: none; }
+.link-inline:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .pricing-card { padding: 1.75rem 1.5rem; }
+}
+
+    /* ── ACHIEVEMENTS ── */
+    .achievements { background: var(--cream); }
+    .ach-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    }
+    .ach-card {
+      background: var(--white); border-radius: 12px;
+      border: 1px solid var(--border); padding: 2rem;
+    }
+    .ach-card h3 {
+      font-size: .8rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: 1.1rem; padding-bottom: .75rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .ach-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .ach-list li {
+      display: flex; align-items: flex-start; gap: .65rem;
+      font-size: .9rem; color: var(--navy); line-height: 1.5;
+    }
+    .ach-list li::before {
+      content: ''; flex-shrink: 0; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--gold); margin-top: .45rem;
+    }
+    .ach-list li strong { font-weight: 600; }
+
+    /* Score pills row */
+    .score-row {
+      display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;
+    }
+    .score-pill {
+      background: var(--navy); color: var(--white);
+      border-radius: 8px; padding: 1rem 1.5rem; text-align: center;
+      min-width: 120px;
+    }
+    .score-pill .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700; color: var(--gold);
+      line-height: 1; display: block;
+    }
+    .score-pill .lbl {
+      font-size: .72rem; font-weight: 600; color: rgba(255,255,255,0.6);
+      text-transform: uppercase; letter-spacing: .06em;
+      display: block; margin-top: .3rem;
+    }
+
+    /* ── MISSION LINE ── */
+/* Add this to your <style> section, e.g. right after the .achievements rules */
+
+.mission-line {
+  background: var(--cream);
+  padding: 0 2.5rem 3.5rem;
+  text-align: center;
+}
+.mission-line p {
+  max-width: 620px; margin: 0 auto;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--navy);
+  line-height: 1.7;
+  position: relative;
+  padding-top: 2rem;
+}
+.mission-line p::before {
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 2px;
+  background: var(--gold);
+}
+
+    /* ── COMMUNITY ── */
+    .community { background: var(--navy); }
+    .community .eyebrow { color: var(--gold); }
+    .community .section-h { color: var(--white); }
+    .community .section-sub { color: rgba(255,255,255,0.6); }
+    .community-inner {
+      display: grid; grid-template-columns: 3fr 2fr; gap: 3rem;
+      align-items: start;
+    }
+    .community p {
+      color: rgba(255,255,255,0.7); font-size: .97rem; line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .community a.link {
+      color: #7EB3FF; font-weight: 600; text-decoration: none;
+    }
+    .community a.link:hover { text-decoration: underline; }
+    .library-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px; padding: 1.75rem;
+    }
+    .library-card h4 {
+      font-size: .95rem; font-weight: 700; color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .library-card p {
+      font-size: .85rem; margin-bottom: 1.1rem;
+    }
+    .library-tag {
+      display: inline-block;
+      background: rgba(212,160,23,0.2); color: var(--gold);
+      font-size: .75rem; font-weight: 700;
+      padding: .3rem .8rem; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--white); }
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; margin-bottom: 1rem; line-height: 1.2;
+    }
+    .contact-info p {
+      font-size: .97rem; color: var(--gray); line-height: 1.75; margin-bottom: 1.75rem;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: .75rem;
+    }
+    .detail-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: #EEF3FF; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .detail-text strong {
+      display: block; font-size: .8rem; text-transform: uppercase;
+      letter-spacing: .07em; color: var(--gray); margin-bottom: .15rem;
+    }
+    .detail-text span {
+      font-size: .93rem; font-weight: 500; color: var(--navy);
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: .85rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      font-family: 'Inter', sans-serif; font-size: .93rem;
+      padding: .8rem 1rem;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      background: var(--cream); color: var(--navy);
+      width: 100%; transition: border-color .2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none; border-color: var(--blue);
+      background: var(--white);
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form button {
+      background: var(--blue); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 700;
+      padding: .9rem; border: none; border-radius: 8px;
+      cursor: pointer; transition: opacity .2s;
+    }
+    .contact-form button:hover { opacity: .85; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 1.75rem 2.5rem;
+    }
+    .footer-top {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: .75rem;
+    }
+    footer p { font-size: .82rem; color: rgba(255,255,255,0.4); }
+    footer p span { color: var(--gold); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-size: .82rem; color: rgba(255,255,255,0.4);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-disclaimer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: .76rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.5;
+      max-width: 640px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .ach-grid { grid-template-columns: 1fr; }
+      .community-inner { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-watermark { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Leroy Song <span>·</span> Math Tutoring</span>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#achievements">About</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a session</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-watermark">∫</div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Math Tutoring · Bridgeport, WV &amp; Online</div>
+    <h1>Build real <em>confidence</em> in math — at any level.</h1>
+    <p>Hi, I'm Leroy Song, a rising senior at Bridgeport High School with a passion for mathematics and helping students genuinely understand it. In-person in the North Central West Virginia area, or online nationwide via Zoom and Google Meet.</p>
+    <div class="badges">
+      <div class="badge"><span class="badge-dot"></span>SAT: 1560 (800 Math)</div>
+      <div class="badge"><span class="badge-dot"></span>AP Calculus BC: 5</div>
+      <div class="badge"><span class="badge-dot"></span>WV State Math Field Day Champion</div>
+      <div class="badge"><span class="badge-dot"></span>WVU Integration Bee Champion</div>
+      <div class="badge badge-community"><span class="badge-dot"></span>Free Math Help at Bridgeport Public Library — Mondays</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book your first session</a>
+      <a href="#services" class="btn-ghost">View services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="inner">
+      <p class="eyebrow">What I teach</p>
+      <h2 class="section-h">Math tutoring for every stage</h2>
+      <p class="section-sub">Each session is tailored to your learning style and goals — whether you need consistent weekly support, help with one tough topic, or focused exam prep.</p>
+  
+      <h3 class="services-category-title">Academic Support</h3>
+      <div class="services-grid">
+        <div class="service-item">
+          <h3>Middle School Math &amp; Pre-Algebra</h3>
+          <p>Build strong foundations in arithmetic, fractions, ratios, and early algebra concepts.</p>
+        </div>
+        <div class="service-item">
+          <h3>Algebra I &amp; II</h3>
+          <p>Master equations, functions, systems, and problem-solving strategies with confidence.</p>
+        </div>
+        <div class="service-item">
+          <h3>Geometry</h3>
+          <p>Develop logical reasoning through proofs, geometric relationships, and spatial thinking.</p>
+        </div>
+        <div class="service-item">
+          <h3>Precalculus</h3>
+          <p>Strengthen understanding of advanced functions, trigonometry, and mathematical modeling</p>
+        </div>
+        <div class="service-item">
+          <h3>Calculus AB / BC</h3>
+          <p>Build a solid understanding of limits, derivatives, integrals, and AP exam strategies.</p>
+        </div>
+        <div class="service-item">
+          <h3>AP Statistics</h3>
+          <p>Learn data analysis, probability, inference, and statistical reasoning for classroom and AP success.</p>
+        </div>
+        <div class="service-item">
+          <h3>AP Physics 1 / 2 / C</h3>
+          <p>Connect mathematical concepts to physics through problem-solving and exam preparation.</p>
+        </div>
+      </div>
+  
+      <h3 class="services-category-title">Competition &amp; Test Prep</h3>
+      <div class="services-grid">
+        <div class="service-item">
+          <h3>SAT / ACT Math</h3>
+          <p>Improve test-taking strategies, fill content gaps, and maximize your score potential.</p>
+        </div>
+        <div class="service-item">
+          <h3>MATHCOUNTS</h3>
+          <p>Develop creative problem-solving skills and competition strategies for middle school students.</p>
+        </div>
+        <div class="service-item">
+          <h3>AMC 8 / AMC 10 / AMC 12</h3>
+          <p>Explore challenging problems and advanced techniques for national mathematics competitions.</p>
+        </div>
+        <div class="service-item">
+          <h3>WV State Math Field Day Coaching</h3>
+          <p>Learn proven strategies from a multi-year county champion and state-level award winner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- PROMISE BANNER -->
+<div class="promise-banner">
+  <p><strong>My promise to you:</strong> I'm confident we can make meaningful progress together. If you're not completely satisfied with your first session, <strong>it's free.</strong></p>
+  <span class="guarantee">100% satisfaction guarantee on session one</span>
+</div>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+    <div class="inner">
+      <p class="eyebrow">Rates</p>
+      <h2 class="section-h">Simple, transparent pricing</h2>
+      <p class="section-sub">No packages to commit to — pay per session, cancel anytime. Your first session is backed by a satisfaction guarantee.</p>
+  
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Academic Support</h3>
+          <p class="pricing-desc">Middle school math through Calculus, AP Statistics, and AP Physics.</p>
+          <div class="pricing-amount"><span class="currency">$</span>25<span class="per">/ 60-minute session</span></div>
+          <ul class="pricing-list">
+            <li>1-on-1, in-person or online</li>
+            <li>Homework help &amp; concept review</li>
+            <li>Flexible scheduling</li>
+          </ul>
+          <a href="#contact" class="pricing-btn">Book a session</a>
+        </div>
+  
+        <div class="pricing-card featured">
+          <span class="pricing-tag">Most requested</span>
+          <h3>Competition &amp; Test Prep</h3>
+          <p class="pricing-desc">SAT/ACT, MATHCOUNTS, AMC 8/10/12, and WV Math Field Day coaching.</p>
+          <div class="pricing-amount"><span class="currency">$</span>30<span class="per">/ 60-minute session</span></div>
+          <ul class="pricing-list">
+            <li>Strategy from a multi-year champion</li>
+            <li>Targeted practice problems</li>
+            <li>Flexible scheduling</li>
+          </ul>
+          <a href="#contact" class="pricing-btn pricing-btn-featured">Book a session</a>
+        </div>
+      </div>
+  
+      <p class="pricing-note">Can't afford private tutoring? Join free drop-in help every Monday at <a href="#community" class="link-inline">Bridgeport Public Library's Brain Power Hour</a> — no registration required.</p>
+    </div>
+  </section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievements" id="achievements">
+  <div class="inner">
+    <p class="eyebrow">About Leroy</p>
+    <h2 class="section-h">Credentials you can trust</h2>
+    <p class="section-sub">Academic results and competition experience that give students and families confidence.</p>
+
+    <div class="score-row">
+      <div class="score-pill">
+        <span class="num">1560</span>
+        <span class="lbl">SAT Score</span>
+      </div>
+      <div class="score-pill">
+        <span class="num">800</span>
+        <span class="lbl">SAT Math</span>
+      </div>
+      <div class="score-pill">
+        <span class="num">5 / 5 / 5</span>
+        <span class="lbl">AP Calc · Stats · Physics</span>
+      </div>
+      <div class="score-pill">
+        <span class="num">5×</span>
+        <span class="lbl">County Champion</span>
+      </div>
+    </div>
+
+    <div class="ach-grid">
+      <div class="ach-card">
+        <h3>WV State Math Field Day</h3>
+        <ul class="ach-list">
+          <li><strong>2026 (Grade 11):</strong> 1st Place, Grades 10–12 Division</li>
+          <li><strong>2025 (Grade 10):</strong> 2nd Place, Grades 10–12 Division</li>
+          <li><strong>2024 (Grade 9):</strong> 3rd Place, Grade 9 Division</li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <h3>Harrison County Math Field Day</h3>
+        <ul class="ach-list">
+          <li><strong>County Champion (1st Place), 2022–2026</strong> — five consecutive years</li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <h3>WVU Integration Bee</h3>
+        <ul class="ach-list">
+          <li><strong>2025:</strong> Champion &amp; Top High School Competitor</li>
+          <li><strong>2026:</strong> Runner-Up &amp; Top High School Competitor</li>
+        </ul>
+      </div>
+      <div class="ach-card">
+        <h3>Other Competitions</h3>
+        <ul class="ach-list">
+          <li><strong>WVU Junior Mathematics Competition 2026:</strong> 2nd Place, Grades 10–12 Division</li>
+          <li><strong>MATHCOUNTS 2023:</strong> 6th Place, WV State Competition</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<div class="mission-line">
+  <p>Founded in Summer 2026 by Bridgeport High School student Leroy Song to help West Virginia students build confidence and succeed in mathematics.</p>
+</div>
+
+<!-- COMMUNITY -->
+<section class="community" id="community">
+  <div class="inner">
+    <div class="community-inner">
+      <div>
+        <p class="eyebrow">Giving back</p>
+        <h2 class="section-h" style="color:var(--white);">Free tutoring at the Bridgeport Public Library</h2>
+        <p>Beyond private tutoring, Leroy volunteers as a math mentor during Brain Power Hour at the Bridgeport Public Library — a free, drop-in program for learners of all ages held every Monday.</p>
+        <p>He provides help with mathematics, problem-solving, homework, and academic enrichment, with a goal of making high-quality math support accessible throughout North Central West Virginia.</p>
+        <p>As demand grows, Leroy plans to expand his volunteer hours and continue serving students across the region.</p>
+      </div>
+      <div class="library-card">
+        <span class="library-tag">Free · Drop-in</span>
+        <h4 style="margin-top:.75rem;">Brain Power Hour</h4>
+        <p>Every Monday at the Bridgeport Public Library. Open to learners of all ages — no registration required.</p>
+        <a href="https://bplwv.libnet.info/event/16571766" class="link" target="_blank" rel="noopener">View upcoming dates →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="inner">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p class="eyebrow">Get in touch</p>
+          <h2>Ready to get started?</h2>
+          <p>Send a message and I'll get back to you within 24 hours. Your first session comes with a satisfaction guarantee — no risk to try.</p>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="detail-icon">📧</div>
+              <div class="detail-text">
+                <strong>Email</strong>
+                <span>wvmathtutor@gmail.com</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="detail-icon">📞</div>
+              <div class="detail-text">
+                <strong>Phone</strong>
+                <span>(304) 462-9188</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="detail-icon">📍</div>
+              <div class="detail-text">
+                <strong>Location</strong>
+                <span>Bridgeport, WV &amp; Online (Zoom / Google Meet / Microsoft Teams)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div>
+          <form class="contact-form" id="tutoring-contact-form" action="https://formspree.io/f/mkoalaop" method="POST">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Email address" required />
+            </div>
+            <input type="tel" name="phone" placeholder="Phone number (optional)" />
+            <select name="subject" required>
+              <option value="" disabled selected>Subject / area of focus</option>
+              <option>Middle School Math / Pre-Algebra</option>
+              <option>Algebra I or II</option>
+              <option>Geometry</option>
+              <option>Precalculus</option>
+              <option>Calculus AB / BC</option>
+              <option>AP Statistics</option>
+              <option>AP Physics 1 / 2 / C</option>
+              <option>AP Exam Prep</option>
+              <option>SAT / ACT Math</option>
+              <option>MATHCOUNTS</option>
+              <option>AMC 8 / AMC 10 / AMC 12</option>
+              <option>WV State Math Field Day</option>
+              <option>Other</option>
+            </select>
+            <select name="format" required>
+              <option value="" disabled selected>Preferred format</option>
+              <option>In-person (Bridgeport–Clarksburg area)</option>
+              <option>Online (Zoom / Google Meet)</option>
+              <option>Either works</option>
+            </select>
+            <textarea name="message" placeholder="Tell me a bit about what you need help with..." required></textarea>
+            <input type="hidden" name="_subject" value="New tutoring inquiry from wvmathtutor.com" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+            <button type="submit">Send message</button>
+            <p id="form-status" style="display:none; font-size:.9rem; margin-top:.25rem; text-align:center;"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    (function () {
+      const form = document.getElementById('tutoring-contact-form');
+      const status = document.getElementById('form-status');
+      if (!form) return;
+  
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+  
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+  
+          if (response.ok) {
+            form.reset();
+            status.textContent = "Thanks! Your message has been sent — I'll get back to you within 24 hours.";
+            status.style.color = '#1A5CDB';
+            status.style.display = 'block';
+          } else {
+            status.textContent = "Something went wrong. Please email wvmathtutor@gmail.com directly.";
+            status.style.color = '#B91C1C';
+            status.style.display = 'block';
+          }
+        } catch (err) {
+          status.textContent = "Something went wrong. Please email wvmathtutor@gmail.com directly.";
+          status.style.color = '#B91C1C';
+          status.style.display = 'block';
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    })();
+  </script>
+
+<!-- FOOTER -->
+<footer>
+    <div class="inner footer-inner">
+      <div class="footer-top">
+        <p>© 2026 <span>Leroy Song</span> · Math Tutoring · Bridgeport, WV</p>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#achievements">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <p class="footer-disclaimer">Students under 18 must have a parent or guardian complete the initial inquiry form and approve all tutoring arrangements.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
