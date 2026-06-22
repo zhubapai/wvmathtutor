@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Free math practice problems with step-by-step solutions and video walkthroughs from Leroy Song, Bridgeport, WV."/>
+  <title>Practice Problems — Leroy Song Math Tutoring</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+
+  <!-- MathJax: renders LaTeX math notation in the browser -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0B1F3A;
+      --blue:   #1A5CDB;
+      --gold:   #D4A017;
+      --cream:  #F8F7F4;
+      --gray:   #64748B;
+      --border: #E2E8F0;
+      --white:  #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--navy); }
+
+    /* ── NAV (matches index.html) ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(11,31,58,0.97);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-logo { font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: -.01em; text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      font-size: .875rem; font-weight: 500; transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-cta {
+      background: var(--blue); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: .85rem; font-weight: 600;
+      padding: .55rem 1.25rem; border: none; border-radius: 6px;
+      cursor: pointer; text-decoration: none; transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: .85; }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--navy);
+      padding: 8rem 2.5rem 3.5rem;
+      position: relative; overflow: hidden;
+    }
+    .page-header-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(26,92,219,0.18) 0%, transparent 70%);
+    }
+    .page-header-inner { position: relative; max-width: 760px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .78rem; font-weight: 600; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--gold); }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700; line-height: 1.15; color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .page-header p {
+      font-size: 1.02rem; color: rgba(255,255,255,0.65);
+      line-height: 1.75; max-width: 540px;
+    }
+
+    /* ── FILTER TABS ── */
+    .filter-bar {
+      max-width: 760px; margin: 0 auto;
+      padding: 2rem 2.5rem 0;
+      display: flex; flex-wrap: wrap; gap: .6rem;
+    }
+    .filter-tab {
+      font-family: 'Inter', sans-serif; font-size: .85rem; font-weight: 600;
+      color: var(--navy); background: var(--white);
+      border: 1.5px solid var(--border); border-radius: 20px;
+      padding: .5rem 1.1rem; cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .filter-tab:hover { border-color: var(--blue); }
+    .filter-tab.active {
+      background: var(--blue); border-color: var(--blue); color: var(--white);
+    }
+    .filter-tab .count {
+      font-weight: 500; opacity: .75; margin-left: .3rem;
+    }
+
+    /* ── PROBLEM LIST ── */
+    .problem-list {
+      max-width: 760px; margin: 0 auto;
+      padding: 2rem 2.5rem 5rem;
+      display: flex; flex-direction: column; gap: 2rem;
+    }
+    .loading-msg, .error-msg { color: var(--gray); font-style: italic; }
+    .problem-card.hidden { display: none; }
+
+    /* ── PROBLEM CARD ── */
+    .problem-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .card-meta {
+      display: flex; align-items: center; gap: .6rem;
+      padding: 1.5rem 2rem 0;
+    }
+    .problem-number {
+      font-family: 'Inter', sans-serif; font-size: .78rem; font-weight: 700;
+      color: var(--blue); letter-spacing: .04em;
+    }
+    .tag {
+      font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      padding: .25rem .65rem; border-radius: 20px;
+      background: rgba(26,92,219,0.1); color: var(--blue);
+    }
+    .tag.difficulty { background: rgba(212,160,23,0.15); color: #9C7A14; }
+
+    .card-body { padding: 1.1rem 2rem 2rem; }
+
+    .problem-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 1rem; line-height: 1.25;
+    }
+
+    .question-text {
+      font-size: 1rem; color: var(--navy); line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .diagram-wrap {
+      display: flex; justify-content: center;
+      margin: 1.25rem 0 1.75rem;
+      padding: 1.25rem;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .diagram-wrap svg { max-width: 100%; height: auto; }
+
+    /* ── SOLUTION TOGGLE ── */
+    .show-solution-btn {
+      font-family: 'Inter', sans-serif; font-weight: 600; font-size: .9rem;
+      color: var(--white); background: var(--blue);
+      border: none; border-radius: 8px;
+      padding: .75rem 1.4rem; cursor: pointer;
+      transition: opacity .2s;
+    }
+    .show-solution-btn:hover { opacity: .85; }
+    .show-solution-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .solution-panel {
+      margin-top: 1.5rem; padding-top: 1.5rem;
+      border-top: 1px dashed var(--border);
+      display: none;
+    }
+    .solution-panel.open { display: block; animation: unfold .25s ease; }
+    @keyframes unfold {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .solution-label {
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .75rem;
+    }
+    .solution-text {
+      font-size: .98rem; color: var(--gray); line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .answer-box {
+      display: inline-block;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem;
+      background: rgba(26,92,219,0.08); color: var(--navy);
+      padding: .55rem 1.1rem; border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-wrap {
+      position: relative; width: 100%; padding-top: 56.25%;
+      border-radius: 10px; overflow: hidden; background: var(--navy);
+    }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .no-video-msg { font-size: .9rem; color: var(--gray); font-style: italic; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 2.5rem; text-align: center; }
+    footer p { color: rgba(255,255,255,0.5); font-size: .85rem; }
+    footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 540px) {
+      .card-body { padding: 1rem 1.25rem 1.5rem; }
+      .card-meta { padding: 1.1rem 1.25rem 0; }
+      .page-header { padding: 6.5rem 1.5rem 2.75rem; }
+      .filter-bar { padding: 1.5rem 1.25rem 0; }
+      .problem-list { padding: 1.5rem 1.25rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Leroy Song <span>·</span> Math Tutoring</a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="practice.html" class="active">Practice</a></li>
+    <li><a href="index.html#achievements">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a href="index.html#contact" class="nav-cta">Book a session</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="page-header-inner">
+    <p class="eyebrow">Free resource</p>
+    <h1>Practice Problems</h1>
+    <p>Work each problem on paper first. Then check your answer and watch a full video walkthrough.</p>
+  </div>
+</header>
+
+<nav id="filter-bar" class="filter-bar" aria-label="Filter problems by topic">
+  <!-- Tabs inserted by practice.js -->
+</nav>
+
+<main id="problem-list" class="problem-list">
+  <p class="loading-msg">Loading problems&hellip;</p>
+</main>
+
+<footer>
+  <p>New problems posted regularly &middot; <a href="index.html#contact">Need 1‑on‑1 help? Get in touch</a></p>
+</footer>
+
+<script src="practice.js"></script>
+</body>
+</html>

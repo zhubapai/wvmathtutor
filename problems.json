@@ -1,0 +1,23 @@
+[
+  {
+    "id": "geo-001",
+    "topic": "Geometry",
+    "difficulty": "Challenge",
+    "title": "The Median Angle",
+    "question_latex": "In $\\triangle ABC$, let $M$ be the midpoint of side $BC$ (so $BM = MC$). The median $AM$ is drawn from vertex $A$ to the base. Given: $\\angle BMA = 45^\\circ$ and $\\angle BCA = 30^\\circ$. Find the measure of angle $x = \\angle MBA$.",
+    "solution_latex": "Since $\\angle BMA$ and $\\angle AMC$ are supplementary, $\\angle AMC = 180^\\circ - 45^\\circ = 135^\\circ$. In $\\triangle AMC$, $\\angle MAC = 180^\\circ - 135^\\circ - 30^\\circ = 15^\\circ$. Let $x = \\angle MBA$. In $\\triangle ABM$, $\\angle BAM = 135^\\circ - x$. By the Law of Sines, since $BM = MC$: $$\\dfrac{\\sin(135^\\circ - x)}{\\sin x} = \\dfrac{\\sin 15^\\circ}{\\sin 30^\\circ}$$ Solving this equation gives $x = 105^\\circ$. Check: in $\\triangle ABM$, angles are $45^\\circ + 105^\\circ + 30^\\circ = 180^\\circ$. Confirmed.",
+    "answer_latex": "$x = 105^\\circ$",
+    "youtube_id": ""
+  },
+  {
+    "id": "alg-001",
+    "topic": "Algebra",
+    "difficulty": "Challenge",
+    "title": "Nested Radical",
+    "question_latex": "Solve for $x$: $$x = \\sqrt{2022 + \\sqrt{2022 + x}}$$",
+    "solution_latex": "Notice the inner radical $\\sqrt{2022 + x}$ has the same form as the original equation. If $x$ satisfies $x = \\sqrt{2022 + x}$, it also satisfies the original. Squaring: $x^2 = 2022 + x$, which gives $x^2 - x - 2022 = 0$. By the quadratic formula (taking the positive root since $x > 0$): $$x = \\frac{1 + \\sqrt{1 + 4 \\cdot 2022}}{2} = \\frac{1 + \\sqrt{8089}}{2}$$ Verification: $\\sqrt{8089} \\approx 89.94$, so $x \\approx 45.47$. Check: $\\sqrt{2022 + 45.47} \\approx 45.47$. ✓",
+    "answer_latex": "$x = \\dfrac{1 + \\sqrt{8089}}{2}$",
+    "youtube_id": "icgrHcOQ_AA"
+  }
+]
+
