@@ -18,6 +18,26 @@
     "solution_latex": "Notice the inner radical $\\sqrt{2022 + x}$ has the same form as the original equation. If $x$ satisfies $x = \\sqrt{2022 + x}$, it also satisfies the original. Squaring: $x^2 = 2022 + x$, which gives $x^2 - x - 2022 = 0$. By the quadratic formula (taking the positive root since $x > 0$): $$x = \\frac{1 + \\sqrt{1 + 4 \\cdot 2022}}{2} = \\frac{1 + \\sqrt{8089}}{2}$$ Verification: $\\sqrt{8089} \\approx 89.94$, so $x \\approx 45.47$. Check: $\\sqrt{2022 + 45.47} \\approx 45.47$. ✓",
     "answer_latex": "$x = \\dfrac{1 + \\sqrt{8089}}{2}$",
     "youtube_id": "icgrHcOQ_AA"
+  },
+  {
+    "id": "alg-002",
+    "topic": "Algebra",
+    "difficulty": "Challenge",
+    "title": "Exponential Equation",
+    "question_latex": "Solve for $x$: $$5^{x} + 5^{3x} = 10$$",
+    "solution_latex": "Let $u = 5^x$, so $5^{3x} = u^3$. The equation becomes $u^3 + u - 10 = 0$. Testing $u = 2$: $8 + 2 - 10 = 0$. ✓ Factor: $(u-2)(u^2+2u+5) = 0$. The quadratic has discriminant $4 - 20 = -16 < 0$, so no real roots besides $u = 2$. Since $5^x = 2$, taking $\\log_5$ of both sides:",
+    "answer_latex": "$x = \\log_5 2$",
+    "youtube_id": "UtspgwUhlwE"
+  },
+  {
+    "id": "alg-003",
+    "topic": "Algebra",
+    "difficulty": "Challenge",
+    "title": "Integer System",
+    "question_latex": "Find the positive integers $a$, $b$, and $c$, where $a<b$, given: $$\\begin{aligned} ab+c &= 2022\\\\ abc &= 2021 \\end{aligned}$$",
+    "solution_latex": "Since $abc = 2021$ and $2021 = 43 \\times 47$ (both prime), the positive integer factorizations are $\\{1, 1, 2021\\}$ and $\\{1, 43, 47\\}$. Testing $\\{1, 43, 47\\}$ with $c = 1$: $ab + c = 43 \\times 47 + 1 = 2022$. ✓ The case $\\{1, 1, 2021\\}$ requires $a = b$, violating $a < b$.",
+    "answer_latex": "$a = 43$, $b = 47$, $c = 1$",
+    "youtube_id": "MG5sD8RdmS0"
   }
 ]
 
