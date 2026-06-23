@@ -34,7 +34,7 @@
     "topic": "Algebra",
     "difficulty": "Challenge",
     "title": "Integer System",
-    "question_latex": "Find the positive integers $a$, $b$, and $c$, where $a<b$, given: $$\\begin{aligned} ab+c &= 2022\\\\ abc &= 2021 \\end{aligned}$$",
+    "question_latex": "Find the positive integers $a$, $b$, and $c$, where $a<b$, given: $$\\begin{cases} ab+c = 2022 \\\\ abc = 2021 \\end{cases}$$",
     "solution_latex": "Since $abc = 2021$ and $2021 = 43 \\times 47$ (both prime), the positive integer factorizations are $\\{1, 1, 2021\\}$ and $\\{1, 43, 47\\}$. Testing $\\{1, 43, 47\\}$ with $c = 1$: $ab + c = 43 \\times 47 + 1 = 2022$. ✓ The case $\\{1, 1, 2021\\}$ requires $a = b$, violating $a < b$.",
     "answer_latex": "$a = 43$, $b = 47$, $c = 1$",
     "youtube_id": "MG5sD8RdmS0"
