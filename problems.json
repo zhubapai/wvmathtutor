@@ -44,7 +44,7 @@
     "topic": "Algebra",
     "difficulty": "Challenge",
     "title": "Parabola Foci",
-    "question_latex": "Find the distance between the foci of two parabolas, $C_{1}$ and $C_{2}$ that both pass through the point $(4,8)$ and are given by the equations: $$\\begin{aligned} C_{1}:y^{2}=2p_{1}x \\\\ C_{2}:x^{2}=2p_{2}y \\\\ Where p_{1} and p_{2} are both positive real numbers \\end{aligned}$$",
+    "question_latex": "Find the distance between the foci of two parabolas, $C_{1}$ and $C_{2}$ that both pass through the point $(4,8)$ and are given by the equations: $$\\begin{aligned} &C_{1}:y^{2}=2p_{1}x \\\\ &C_{2}:x^{2}=2p_{2}y \\end{aligned}$$ Where p_{1} and p_{2} are both positive real numbers",
     "solution_latex": "Substituting $(4,8)$ into $C_1$: $8^2 = 2p_1(4)$, so $p_1 = 8$. Substituting into $C_2$: $4^2 = 2p_2(8)$, so $p_2 = 1$. The focus of $C_1: y^2 = 16x$ is at $\\left(\\frac{p_1}{2}, 0\\right) = (4, 0)$. The focus of $C_2: x^2 = 2y$ is at $\\left(0, \\frac{p_2}{2}\\right) = \\left(0, \\frac{1}{2}\\right)$. The distance between the foci is: $$d = \\sqrt{(4-0)^2 + \\left(0-\\frac{1}{2}\\right)^2} = \\sqrt{16 + \\frac{1}{4}} = \\frac{\\sqrt{65}}{2}$$",
     "answer_latex": "$d = \\frac{\\sqrt{65}}{2}$",
     "youtube_id": "PHOnAWiD6ds"
