@@ -48,6 +48,16 @@
     "solution_latex": "Substituting $(4,8)$ into $C_1$: $8^2 = 2p_1(4)$, so $p_1 = 8$. Substituting into $C_2$: $4^2 = 2p_2(8)$, so $p_2 = 1$. The focus of $C_1: y^2 = 16x$ is at $\\left(\\frac{p_1}{2}, 0\\right) = (4, 0)$. The focus of $C_2: x^2 = 2y$ is at $\\left(0, \\frac{p_2}{2}\\right) = \\left(0, \\frac{1}{2}\\right)$. The distance between the foci is: $$d = \\sqrt{(4-0)^2 + \\left(0-\\frac{1}{2}\\right)^2} = \\sqrt{16 + \\frac{1}{4}} = \\frac{\\sqrt{65}}{2}$$",
     "answer_latex": "$d = \\frac{\\sqrt{65}}{2}$",
     "youtube_id": "PHOnAWiD6ds"
+  },
+  {
+    "id": "trig-001",
+    "topic": "Trigonometry",
+    "difficulty": "Challenge",
+    "title": "Trigonometry and Sets",
+    "question_latex":"Find $A \\cap B$ where: $$\\begin{aligned} &A = \\left\\{\\sin\\frac{7\\pi}{6},\\ \\cos\\frac{5\\pi}{3},\\ \\tan\\frac{5\\pi}{4}\\right\\} \\\\ &B = \\left\\{-\\frac{\\sqrt{3}}{2},\\ -\\frac{1}{2},\\ 1\\right\\} \\end{aligned}$$",
+    "solution_latex": "Evaluating set $A$: $\\sin\\frac{7\\pi}{6} = -\\frac{1}{2}$, $\\cos\\frac{5\\pi}{3} = \\frac{1}{2}$, $\\tan\\frac{5\\pi}{4} = 1$. So $A = \\left\\{-\\frac{1}{2}, \\frac{1}{2}, 1\\right\\}$. Comparing with $B = \\left\\{-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2}, 1\\right\\}$, the common elements are $-\\frac{1}{2}$ and $1$.",
+    "answer_latex": "$A \\cap B = \\left\\{-\\dfrac{1}{2},\\ 1\\right\\}$",
+    "youtube_id": "SYl-lcO-eAQ"
   }
 ]
 
