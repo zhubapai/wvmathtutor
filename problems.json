@@ -27,7 +27,7 @@
     "question_latex": "Solve for $x$: $$5^{x} + 5^{3x} = 10$$",
     "solution_latex": "Let $u = 5^x$, so $5^{3x} = u^3$. The equation becomes $u^3 + u - 10 = 0$. Testing $u = 2$: $8 + 2 - 10 = 0$. ✓ Factor: $(u-2)(u^2+2u+5) = 0$. The quadratic has discriminant $4 - 20 = -16 < 0$, so no real roots besides $u = 2$. Since $5^x = 2$, taking $\\log_5$ of both sides:",
     "answer_latex": "$x = \\log_5 2$",
-    "youtube_id": "UtspgwUhlwE"
+    "youtube_id": "wD9hjUgdTG8"
   },
   {
     "id": "alg-003",
