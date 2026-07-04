@@ -58,6 +58,16 @@
     "solution_latex": "Evaluating set $A$: $\\sin\\frac{7\\pi}{6} = -\\frac{1}{2}$, $\\cos\\frac{5\\pi}{3} = \\frac{1}{2}$, $\\tan\\frac{5\\pi}{4} = 1$. So $A = \\left\\{-\\frac{1}{2}, \\frac{1}{2}, 1\\right\\}$. Comparing with $B = \\left\\{-\\frac{\\sqrt{3}}{2}, -\\frac{1}{2}, 1\\right\\}$, the common elements are $-\\frac{1}{2}$ and $1$.",
     "answer_latex": "$A \\cap B = \\left\\{-\\dfrac{1}{2},\\ 1\\right\\}$",
     "youtube_id": "SYl-lcO-eAQ"
+  },
+  {
+    "id": "calc-001",
+    "topic": "Calculus",
+    "difficulty": "Challenge",
+    "title": "Tangent Line at a Point",
+    "question_latex": "Find the equation of the tangent line to the curve $y = 5x+8lnx$ at the point $(1, 5)$.",
+    "solution_latex": "Verify: $y(1) = 5(1) + 8\\ln(1) = 5$. ✓ Differentiate: $y' = 5 + \\frac{8}{x}$. At $x=1$: $y'(1) = 5 + 8 = 13$. Using point-slope form with $(1, 5)$: $$y - 5 = 13(x-1) \\implies y = 13x - 8$$",
+    "answer_latex": "$y = 13x - 8$",
+    "youtube_id": "FfofruejxE4"
   }
 ]
 
