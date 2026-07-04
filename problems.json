@@ -64,7 +64,7 @@
     "topic": "Calculus",
     "difficulty": "Challenge",
     "title": "Tangent Line at a Point",
-    "question_latex": "Find the equation of the tangent line to the curve $y = 5x+8lnx$ at the point $(1, 5)$.",
+    "question_latex": "Find the equation of the tangent line to the curve $y = 5x+8\\ln(x)$ at the point $(1, 5)$.",
     "solution_latex": "Verify: $y(1) = 5(1) + 8\\ln(1) = 5$. ✓ Differentiate: $y' = 5 + \\frac{8}{x}$. At $x=1$: $y'(1) = 5 + 8 = 13$. Using point-slope form with $(1, 5)$: $$y - 5 = 13(x-1) \\implies y = 13x - 8$$",
     "answer_latex": "$y = 13x - 8$",
     "youtube_id": "FfofruejxE4"
