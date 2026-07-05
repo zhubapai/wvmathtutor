@@ -68,6 +68,16 @@
     "solution_latex": "Verify: $y(1) = 5(1) + 8\\ln(1) = 5$. ✓ Differentiate: $y' = 5 + \\frac{8}{x}$. At $x=1$: $y'(1) = 5 + 8 = 13$. Using point-slope form with $(1, 5)$: $$y - 5 = 13(x-1) \\implies y = 13x - 8$$",
     "answer_latex": "$y = 13x - 8$",
     "youtube_id": "FfofruejxE4"
+  },
+  {
+    "id": "alg-005",
+    "topic": "Algebra",
+    "difficulty": "Challenge",
+    "title": "Continued Fraction Puzzle",
+    "question_latex": "Find $T+V$ where: $$\\frac{40}{7} = T + \\frac{1}{1+\\frac{1}{V+\\frac{1}{V}}}$$",
+    "solution_latex": "Write $\\frac{40}{7} = 5 + \\frac{5}{7}$, so $T = 5$ and $\\frac{5}{7} = \\frac{1}{1+\\frac{1}{V+\\frac{1}{V}}}$. Flipping: $\\frac{7}{5} = 1 + \\frac{1}{V+\\frac{1}{V}}$, so $\\frac{2}{5} = \\frac{1}{V+\\frac{1}{V}}$. Flipping again: $\\frac{5}{2} = V + \\frac{1}{V} = \\frac{V^2+1}{V}$. This gives $2V^2 - 5V + 2 = 0$, factoring as $(2V-1)(V-2) = 0$, so $V = 2$ or $V = \\frac{1}{2}$. Since $V$ must be a positive integer, $V = 2$ and $T = 5$.",
+    "answer_latex": "$T + V = 7$",
+    "youtube_id": "0Od8GwRRMKM"
   }
 ]
 
