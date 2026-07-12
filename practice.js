@@ -38,6 +38,103 @@ const DIAGRAMS = {
   <text x="${(M[0]+C[0])/2 + 28}" y="${C[1]-2}" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#D4A017">30&#176;</text>
   <text x="${B[0]+5}" y="${B[1]-5}" font-family="Inter, sans-serif" font-size="13" font-weight="600" text-anchor="middle" fill="#D4A017">x</text>
 </svg>`;
+  },
+
+  "geo-002": function () {
+    // Coordinates mirror the TikZ figure: A(0,3) B(0,0) C(4,0) D(1.6,1.8) E(0,1) F(1,0)
+    // Scaled and flipped for screen space (SVG y grows downward).
+    const scale = 60;
+    const offsetX = 70;
+    const offsetY = 20;
+    const pt = (x, y) => [offsetX + x * scale, offsetY + (3 - y) * scale];
+
+    const A = pt(0, 3);
+    const B = pt(0, 0);
+    const C = pt(4, 0);
+    const D = pt(1.6, 1.8);
+    const E = pt(0, 1);
+    const F = pt(1, 0);
+
+    return `
+<svg viewBox="0 0 380 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right triangle ABC with the right angle at B. Point D lies on hypotenuse AC, with E on AB and F on BC, such that AE equals AD and CF equals CD. Angle EDF is marked x.">
+  <polygon points="${A[0]},${A[1]} ${B[0]},${B[1]} ${C[0]},${C[1]}" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="${E[0]}" y1="${E[1]}" x2="${D[0]}" y2="${D[1]}" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="${D[0]}" y1="${D[1]}" x2="${F[0]}" y2="${F[1]}" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- right angle marker at B -->
+  <polyline points="70,184 86,184 86,200" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- tick marks: AE = AD (red) -->
+  <line x1="62" y1="80" x2="78" y2="80" stroke="#DC2626" stroke-width="2"/>
+  <line x1="113.2" y1="62.4" x2="122.8" y2="49.6" stroke="#DC2626" stroke-width="2"/>
+
+  <!-- tick marks: CF = CD (blue) -->
+  <line x1="220" y1="192" x2="220" y2="208" stroke="#1A5CDB" stroke-width="2"/>
+  <line x1="233.2" y1="152.4" x2="242.8" y2="139.6" stroke="#1A5CDB" stroke-width="2"/>
+
+  <!-- labels -->
+  <text x="${A[0]-10}" y="${A[1]+4}" font-family="Inter, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#0B1F3A">A</text>
+  <text x="${B[0]-12}" y="${B[1]+14}" font-family="Inter, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#0B1F3A">B</text>
+  <text x="${C[0]+12}" y="${C[1]+14}" font-family="Inter, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#0B1F3A">C</text>
+  <text x="${D[0]+14}" y="${D[1]-6}" font-family="Inter, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#0B1F3A">D</text>
+  <text x="${E[0]-12}" y="${E[1]+4}" font-family="Inter, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#0B1F3A">E</text>
+  <text x="${F[0]}" y="${F[1]+18}" font-family="Inter, sans-serif" font-size="15" font-weight="600" text-anchor="middle" fill="#0B1F3A">F</text>
+
+  <text x="148" y="115" font-family="Inter, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#D4A017">x</text>
+</svg>`;
+  },
+
+  "geo-003": function () {
+    // Three triangles sharing one baseline: small left triangle (apex D, base P–F),
+    // big triangle ABC (apex B), small right triangle (apex E, base G–Q).
+    // P and Q are the unlabeled outer base points; A lies between P and F,
+    // C lies between G and Q. Coordinates are illustrative, not exact.
+    const P = [40, 143];
+    const A = [100, 143];
+    const F = [160, 143];
+    const G = [200, 143];
+    const C = [272, 143];
+    const Q = [360, 143];
+    const D = [110, 56];
+    const B = [170, 22];
+    const E = [249, 71];
+
+    const wedgeColor = "rgba(212,160,23,0.4)";
+
+    return `
+<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three triangles share a common baseline: a small triangle with apex D, the main triangle ABC with apex B and a 70 degree angle at B, and a small triangle with apex E. The four shaded angles are at the outer base point near D, at D itself, at E itself, and at the outer base point near E.">
+  <!-- shared baseline -->
+  <line x1="${P[0]}" y1="${P[1]}" x2="${Q[0]}" y2="${Q[1]}" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- left small triangle -->
+  <line x1="${P[0]}" y1="${P[1]}" x2="${D[0]}" y2="${D[1]}" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="${D[0]}" y1="${D[1]}" x2="${F[0]}" y2="${F[1]}" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- big triangle -->
+  <line x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="${B[0]}" y1="${B[1]}" x2="${C[0]}" y2="${C[1]}" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- right small triangle -->
+  <line x1="${G[0]}" y1="${G[1]}" x2="${E[0]}" y2="${E[1]}" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="${E[0]}" y1="${E[1]}" x2="${Q[0]}" y2="${Q[1]}" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- shaded angle wedges (gold) -->
+  <path d="M 40,143 L 50.03,130.53 A 16,16 0 0,1 56,143 Z" fill="${wedgeColor}" stroke="#0B1F3A" stroke-width="1"/>
+  <path d="M 110,56 L 117.96,69.88 A 16,16 0 0,1 99.97,68.47 Z" fill="${wedgeColor}" stroke="#0B1F3A" stroke-width="1"/>
+  <path d="M 249,71 L 262.42,79.71 A 16,16 0 0,1 239.99,84.22 Z" fill="${wedgeColor}" stroke="#0B1F3A" stroke-width="1"/>
+  <path d="M 360,143 L 344,143 A 16,16 0 0,1 346.58,134.29 Z" fill="${wedgeColor}" stroke="#0B1F3A" stroke-width="1"/>
+
+  <!-- point labels -->
+  <text x="${A[0]}" y="${A[1]+18}" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0B1F3A">A</text>
+  <text x="${F[0]}" y="${F[1]+18}" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0B1F3A">F</text>
+  <text x="${G[0]}" y="${G[1]+18}" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0B1F3A">G</text>
+  <text x="${C[0]}" y="${C[1]+18}" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0B1F3A">C</text>
+  <text x="${D[0]+20}" y="${D[1]+26}" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0B1F3A">D</text>
+  <text x="${B[0]}" y="${B[1]-8}" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0B1F3A">B</text>
+  <text x="${E[0]-17}" y="${E[1]+18}" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" fill="#0B1F3A">E</text>
+
+  <text x="${B[0]+3}" y="${B[1]+22}" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#D4A017">70&#176;</text>
+</svg>`;
   }
 };
 
