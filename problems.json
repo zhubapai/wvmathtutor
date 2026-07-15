@@ -158,6 +158,16 @@
     "solution_latex": "Let $\\angle BAC = \\alpha$ and $\\angle BCA = \\gamma$, so $\\alpha + \\gamma = 180^\\circ - 70^\\circ = 110^\\circ$. Since $D$ lies on $AB$ and $F$ lies on $AC$, $\\angle DAF = \\angle BAC = \\alpha$ automatically. The given condition $\\angle DAF = \\angle DFA$ then forces $\\angle DFA = \\alpha$ as well (triangle $ADF$ is isosceles). Let $P$ be the outer vertex of the left small triangle, so $A$ lies between $P$ and $F$ on the baseline; since ray $FP$ is the same as ray $FA$, $\\angle DFP = \\angle DFA = \\alpha$. In $\\triangle PDF$, the angles sum to $180^\\circ$: $$\\angle DPF + \\angle PDF = 180^\\circ - \\alpha$$ This is exactly the sum of the two shaded angles from the left triangle (at $P$ and at $D$). By the same reasoning on the right side (with $Q$ the outer vertex, $C$ between $G$ and $Q$): $$\\angle EQG + \\angle GEQ = 180^\\circ - \\gamma$$ Adding both results gives the total of all four shaded angles: $$(180^\\circ - \\alpha) + (180^\\circ - \\gamma) = 360^\\circ - (\\alpha + \\gamma) = 360^\\circ - 110^\\circ = 250^\\circ$$ Notice this sum is independent of exactly where the two outer vertices are placed — only $\\angle ABC$ matters.",
     "answer_latex": "$250^\\circ$",
     "youtube_id": "gDhQ7oXNBCA"
+  },
+  {
+    "id": "alg-010",
+    "topic": "Algebra",
+    "difficulty": "Challenge",
+    "title": "Minimum of a Product",
+    "question_latex": "Find the minimum value of $$\\left(x+\\frac{1}{x}\\right)\\left(x+\\frac{4}{x}\\right)$$ where $x \\neq 0$.",
+    "solution_latex": "Expand the product: $$\\left(x+\\frac{1}{x}\\right)\\left(x+\\frac{4}{x}\\right) = x^2 + 4 + 1 + \\frac{4}{x^2} = x^2 + \\frac{4}{x^2} + 5$$ Since $x^2 > 0$ for all $x \\neq 0$ (regardless of the sign of $x$), apply AM-GM: $$x^2 + \\frac{4}{x^2} \\ge 2\\sqrt{x^2 \\cdot \\frac{4}{x^2}} = 2\\sqrt{4} = 4$$ with equality when $x^2 = \\frac{4}{x^2}$, i.e., $x^4 = 4$, so $x^2 = 2$ and $x = \\pm\\sqrt{2}$. Therefore the minimum value of the full expression is $4 + 5 = 9$. Check at $x=\\sqrt2$: $\\left(\\sqrt2+\\frac{1}{\\sqrt2}\\right)\\left(\\sqrt2+\\frac{4}{\\sqrt2}\\right) \\approx (2.121)(4.243) \\approx 9$. ✓",
+    "answer_latex": "$9$",
+    "youtube_id": "cgdTU8XdG_s"
   }
 ]
 
