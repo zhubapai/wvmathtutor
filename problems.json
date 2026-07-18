@@ -188,6 +188,26 @@
     "solution_latex": "Let $a = \\sqrt[3]{15x+1-x^2}$ and $b = \\sqrt[3]{x^2-15x+27}$, so $a+b=4$. Notice the two radicands add to a constant: $$a^3+b^3 = (15x+1-x^2)+(x^2-15x+27) = 28$$ Using $a^3+b^3 = (a+b)^3 - 3ab(a+b)$: $$28 = 4^3 - 3ab(4) = 64-12ab \\implies 12ab = 36 \\implies ab=3$$ So $a$ and $b$ are roots of $t^2-4t+3=0$, giving $\\{a,b\\}=\\{1,3\\}$. Case 1 ($a=1$): $15x+1-x^2=1 \\implies x(15-x)=0 \\implies x=0 \\text{ or } x=15$. Case 2 ($a=3$): $15x+1-x^2=27 \\implies x^2-15x+26=0 \\implies (x-2)(x-13)=0 \\implies x=2 \\text{ or } x=13$. All four values check: at each, the two cube roots are $1$ and $3$ in some order, summing to $4$.",
     "answer_latex": "$x \\in \\{0,\\ 2,\\ 13,\\ 15\\}$",
     "youtube_id": "oTz-tv5zrlg"
+  },
+  {
+    "id": "alg-012",
+    "topic": "Algebra",
+    "difficulty": "Challenge",
+    "title": "Logarithmic Equation",
+    "question_latex": "Given $a > 1$, and $$\\frac{1}{\\log_8 a} - \\frac{1}{\\log_a 4} = -\\frac{5}{2}$$ find the value of $a$.",
+    "solution_latex": "Using the identity $\\frac{1}{\\log_b x} = \\log_x b$, rewrite the equation as $$\\log_a 8 - \\log_4 a = -\\frac{5}{2}$$ Let $t = \\log_2 a$ (with $t > 0$ since $a>1$). Then $\\log_a 8 = \\dfrac{\\log_2 8}{\\log_2 a} = \\dfrac{3}{t}$ and $\\log_4 a = \\dfrac{\\log_2 a}{\\log_2 4} = \\dfrac{t}{2}$. The equation becomes: $$\\frac{3}{t} - \\frac{t}{2} = -\\frac{5}{2}$$ Multiplying by $2t$: $6 - t^2 = -5t \\implies t^2 - 5t - 6 = 0 \\implies (t-6)(t+1) = 0$, so $t=6$ or $t=-1$. Since $t = \\log_2 a > 0$, we need $t = 6$, giving $a = 2^6 = 64$. Check: $\\log_8 64 = 2$, so $\\frac{1}{\\log_8 64} = \\frac{1}{2}$; $\\log_{64} 4 = \\frac{1}{3}$, so $\\frac{1}{\\log_{64}4} = 3$. Then $\\frac{1}{2}-3 = -\\frac{5}{2}$. ✓",
+    "answer_latex": "$a = 64$",
+    "youtube_id": "jfgxzKaHIqU"
+  },
+  {
+    "id": "alg-013",
+    "topic": "Algebra",
+    "difficulty": "Challenge",
+    "title": "Minimum of a² + b² for a Nonnegative Function",
+    "question_latex": "Given the function $f(x) = (x+a)\\ln(x+b)$. If $f(x) \\ge 0$ for all $x$ in its domain, what is the minimum value of $a^2+b^2$?",
+    "solution_latex": "The domain is $x > -b$. On this domain, $\\ln(x+b)$ is negative for $x < 1-b$, zero at $x=1-b$, and positive for $x>1-b$. Similarly, $x+a$ is negative for $x<-a$, zero at $x=-a$, and positive for $x>-a$. Both factors switch from negative to positive as $x$ increases, so for the product to stay $\\ge 0$ across the entire domain, their sign-change points must coincide: $$-a = 1-b \\implies b = a+1$$ (If the switch points didn't coincide, there would be an interval where one factor is positive and the other negative, making $f(x)<0$ there.) Now minimize $a^2+b^2$ subject to $b=a+1$, i.e., points $(a,b)$ on the line $a-b+1=0$. This minimum equals the square of the distance from the origin to this line: $$d = \\frac{|1|}{\\sqrt{1^2+(-1)^2}} = \\frac{1}{\\sqrt{2}} \\implies a^2+b^2 \\ge d^2 = \\frac{1}{2}$$ Equality holds when $(a,b)$ is the foot of the perpendicular from the origin to the line, giving $a=-\\frac{1}{2}$, $b=\\frac{1}{2}$.",
+    "answer_latex": "$\\dfrac{1}{2}$",
+    "youtube_id": "HiU9QkZx4Ss"
   }
 ]
 
