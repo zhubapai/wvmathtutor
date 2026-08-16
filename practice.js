@@ -184,6 +184,14 @@ function renderFilterTabs(problems) {
       applyFilter(btn.dataset.topic);
     });
   });
+
+  // Extra tab: jumps to the Quick Video Lessons section instead of filtering problems
+  const videoCount = document.querySelectorAll("#quick-videos .video-card").length;
+  bar.insertAdjacentHTML("beforeend", `
+    <a class="filter-tab" href="#quick-videos">
+      🎬 Algebra Basics<span class="count">${videoCount}</span>
+    </a>
+  `);
 }
 
 function applyFilter(topic) {

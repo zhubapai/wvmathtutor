@@ -208,6 +208,16 @@
     "solution_latex": "The domain is $x > -b$. On this domain, $\\ln(x+b)$ is negative for $x < 1-b$, zero at $x=1-b$, and positive for $x>1-b$. Similarly, $x+a$ is negative for $x<-a$, zero at $x=-a$, and positive for $x>-a$. Both factors switch from negative to positive as $x$ increases, so for the product to stay $\\ge 0$ across the entire domain, their sign-change points must coincide: $$-a = 1-b \\implies b = a+1$$ (If the switch points didn't coincide, there would be an interval where one factor is positive and the other negative, making $f(x)<0$ there.) Now minimize $a^2+b^2$ subject to $b=a+1$, i.e., points $(a,b)$ on the line $a-b+1=0$. This minimum equals the square of the distance from the origin to this line: $$d = \\frac{|1|}{\\sqrt{1^2+(-1)^2}} = \\frac{1}{\\sqrt{2}} \\implies a^2+b^2 \\ge d^2 = \\frac{1}{2}$$ Equality holds when $(a,b)$ is the foot of the perpendicular from the origin to the line, giving $a=-\\frac{1}{2}$, $b=\\frac{1}{2}$.",
     "answer_latex": "$\\dfrac{1}{2}$",
     "youtube_id": "HiU9QkZx4Ss"
+  },
+  {
+    "id": "trig-002",
+    "topic": "Trigonometry",
+    "difficulty": "Challenge",
+    "title": "Tangent Addition from a Ratio",
+    "question_latex": "Given that $$\\frac{\\cos \\alpha}{\\cos \\alpha - \\sin \\alpha} = \\sqrt{3}$$ find the value of $\\tan\\left(\\alpha + \\frac{\\pi}{4}\\right)$.",
+    "solution_latex": "Divide numerator and denominator by $\\cos\\alpha$ (valid since $\\cos\\alpha \\ne 0$ here): $$\\frac{1}{1-\\tan\\alpha} = \\sqrt{3} \\implies 1-\\tan\\alpha = \\frac{1}{\\sqrt{3}}$$ Using the tangent addition formula: $$\\tan\\left(\\alpha+\\frac{\\pi}{4}\\right) = \\frac{\\tan\\alpha+\\tan\\frac{\\pi}{4}}{1-\\tan\\alpha\\tan\\frac{\\pi}{4}} = \\frac{\\tan\\alpha+1}{1-\\tan\\alpha}$$ Since $1-\\tan\\alpha = \\frac{1}{\\sqrt3}$, we have $\\tan\\alpha = 1-\\frac{1}{\\sqrt3}$, so $\\tan\\alpha+1 = 2-\\frac{1}{\\sqrt3}$. Therefore: $$\\tan\\left(\\alpha+\\frac{\\pi}{4}\\right) = \\frac{2-\\frac{1}{\\sqrt3}}{\\frac{1}{\\sqrt3}} = \\left(2-\\frac{1}{\\sqrt3}\\right)\\sqrt3 = 2\\sqrt3-1$$",
+    "answer_latex": "$2\\sqrt{3}-1$",
+    "youtube_id": "jhj2NN5gPoA"
   }
 ]
 
