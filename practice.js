@@ -188,12 +188,16 @@ function renderFilterTabs(problems) {
   // Extra tabs: jump to the video library sections instead of filtering problems
   const basicsVideoCount = document.querySelectorAll("#quick-videos .video-card").length;
   const collegeVideoCount = document.querySelectorAll("#quick-videos-college .video-card").length;
+  const satVideoCount = document.querySelectorAll("#quick-videos-sat .video-card").length;
   bar.insertAdjacentHTML("beforeend", `
     <a class="filter-tab" href="#quick-videos">
       🎬 Algebra Basics<span class="count">${basicsVideoCount}</span>
     </a>
     <a class="filter-tab" href="#quick-videos-college">
       🎓 College Algebra<span class="count">${collegeVideoCount}</span>
+    </a>
+    <a class="filter-tab" href="#quick-videos-sat">
+      📐 SAT Math<span class="count">${satVideoCount}</span>
     </a>
   `);
 }
