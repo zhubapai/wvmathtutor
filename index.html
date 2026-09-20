@@ -160,8 +160,15 @@
       transition: background .2s;
     }
     .service-item:hover { background: #F0F5FF; }
-    .service-item h3 { font-size: .95rem; font-weight: 700; margin-bottom: .35rem; }
+    .service-item h3 { font-size: .95rem; font-weight: 700; margin-bottom: .35rem; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
     .service-item p { font-size: .85rem; color: var(--gray); line-height: 1.5; }
+    .service-status {
+      display: inline-block;
+      font-size: .65rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+      padding: .2rem .55rem; border-radius: 20px;
+      background: rgba(212,160,23,0.15); color: #9C7A14;
+      white-space: nowrap;
+    }
 
 .services-category-title {
   font-size: .95rem;
@@ -608,7 +615,7 @@
       <h3 class="services-category-title">Academic Support</h3>
       <div class="services-grid">
         <div class="service-item">
-          <h3>Middle School Math &amp; Pre-Algebra</h3>
+          <h3>Middle School Math &amp; Pre-Algebra <span class="service-status">Currently Full</span></h3>
           <p>Build strong foundations in arithmetic, fractions, ratios, and early algebra concepts.</p>
         </div>
         <div class="service-item">
@@ -830,7 +837,7 @@
             <input type="tel" name="phone" placeholder="Phone number (optional)" />
             <select name="subject" required>
               <option value="" disabled selected>Subject / area of focus</option>
-              <option>Middle School Math / Pre-Algebra</option>
+              <option>Middle School Math / Pre-Algebra (Currently Full — Waitlist)</option>
               <option>Algebra I or II</option>
               <option>Geometry</option>
               <option>Precalculus</option>
