@@ -1,0 +1,60 @@
+/* Add after the page's existing styles. No HTML containers are required. */
+.question-visual {
+  margin: -0.4rem 0 1.5rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.question-visual figure { margin: 0; }
+.question-visual figcaption {
+  margin-bottom: .75rem;
+  color: var(--gray, #64748b);
+  font-size: .82rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.question-visual svg { display: block; width: 100%; height: auto; max-height: 360px; }
+.question-visual table { border-collapse: collapse; margin: 0 auto; min-width: 280px; }
+.question-visual th, .question-visual td {
+  border: 1px solid var(--border, #e2e8f0);
+  padding: .65rem 1rem;
+  text-align: center;
+}
+.question-visual th { background: var(--cream, #f8f7f4); font-weight: 700; }
+
+.student-response-wrap {
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 10px;
+}
+.student-response-label { display: block; margin-bottom: .5rem; font-size: .9rem; font-weight: 700; }
+.student-response-input {
+  width: min(100%, 260px);
+  padding: .8rem .9rem;
+  border: 2px solid var(--border, #e2e8f0);
+  border-radius: 8px;
+  color: var(--navy, #0b1f3a);
+  font: 600 1.05rem Inter, sans-serif;
+}
+.student-response-input:focus { outline: none; border-color: var(--blue, #1a5cdb); box-shadow: 0 0 0 3px rgba(26,92,219,.12); }
+.student-response-help { margin-top: .45rem; color: var(--gray, #64748b); font-size: .78rem; }
+
+.practice-hints { margin-top: 1rem; }
+.practice-hints .hint-row { display: flex; gap: .5rem; flex-wrap: wrap; }
+.spr-result {
+  padding: .85rem 1rem;
+  border-radius: 8px;
+  background: var(--cream, #f8f7f4);
+  line-height: 1.7;
+}
+.result-visual { margin-top: 0; }
+
+@media (max-width: 600px) {
+  .question-visual { padding: .65rem; }
+  .question-visual th, .question-visual td { padding: .5rem .7rem; }
+}
