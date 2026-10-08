@@ -1,5 +1,4 @@
-// Drop-in replacement for the original SAT practice engine.
-// Supports the original multiple-choice schema plus visuals and student-produced responses.
+// SAT practice engine (Set 3 — Hard Module). Same engine as Set 2, pointed at sat-questions-3.json.
 
 let questions = [];
 let currentIndex = 0;
@@ -15,8 +14,8 @@ const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;
 
 async function init() {
   try {
-    const res = await fetch("sat-questions-2.json");
-    if (!res.ok) throw new Error("Could not load sat-questions.json");
+    const res = await fetch("sat-questions-3.json");
+    if (!res.ok) throw new Error("Could not load sat-questions-3.json");
     questions = await res.json();
     $("intro-q-count").textContent = questions.length;
   } catch (err) {

@@ -89,6 +89,7 @@
     }
     .flag-btn:hover { border-color: var(--gold); color: var(--gold); }
     .flag-btn.active { background: rgba(212,160,23,0.18); border-color: var(--gold); color: var(--gold); }
+    #timer-display.paused { opacity: .5; }
 
     .test-body { flex: 1; max-width: 680px; margin: 0 auto; padding: 2.5rem 2rem 7rem; width: 100%; }
     .q-meta { display: flex; align-items: center; gap: .7rem; margin-bottom: 1.25rem; }
@@ -200,7 +201,7 @@
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="practice.html">Practice</a></li>
-    <li><a href="sat-practice.html" class="active">SAT Practice</a></li>
+    <li><a href="sat-practice-hub.html" class="active">SAT Practice</a></li>
     <li><a href="index.html#achievements">About</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
@@ -221,7 +222,7 @@
       </div>
       <button id="start-test-btn" class="primary-btn">Start Timed Practice Test</button>
       <p class="untimed-link"><a href="#" id="start-untimed-link">Or go untimed, at your own pace →</a></p>
-      <p class="set-switch-link"><a href="sat-practice.html">← Back to Practice Set 1</a></p>
+      <p class="set-switch-link"><a href="sat-practice-hub.html">← Back to all SAT Practice sets</a></p>
     </div>
   </div>
 
@@ -230,6 +231,7 @@
     <div class="test-topbar">
       <span class="test-title">SAT Math Practice — Set 2</span>
       <span class="test-timer" id="test-timer">⏱ <span id="timer-display">43:00</span></span>
+      <button id="pause-btn" class="flag-btn" type="button" style="display:none;">⏸ Pause</button>
       <button id="flag-btn" class="flag-btn" type="button">🚩 Mark for Review</button>
     </div>
     <div class="test-body">

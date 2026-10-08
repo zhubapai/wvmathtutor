@@ -8,6 +8,7 @@ const flagged = new Set();
 let secondsRemaining = 0;
 let timerInterval = null;
 let timedMode = true;
+let isPaused = false;
 
 const $ = (id) => document.getElementById(id);
 
@@ -33,6 +34,7 @@ async function init() {
     }
   });
   $("flag-btn").addEventListener("click", toggleFlag);
+  $("pause-btn").addEventListener("click", togglePause);
   $("nav-toggle-btn").addEventListener("click", openNavigator);
   $("navigator-overlay").addEventListener("click", (e) => {
     if (e.target.id === "navigator-overlay") closeNavigator();
@@ -45,6 +47,7 @@ async function init() {
 function startTest(timed) {
   timedMode = timed;
   currentIndex = 0;
+  isPaused = false;
   showScreen("screen-test");
   renderQuestion();
 
@@ -52,17 +55,39 @@ function startTest(timed) {
     const minutes = Math.max(1, parseInt($("timer-minutes").value, 10) || 40);
     secondsRemaining = minutes * 60;
     $("test-timer").style.display = "inline-flex";
+    $("pause-btn").style.display = "inline-flex";
+    $("pause-btn").textContent = "⏸ Pause";
     updateTimerDisplay();
-    timerInterval = setInterval(() => {
-      secondsRemaining--;
-      updateTimerDisplay();
-      if (secondsRemaining <= 0) {
-        clearInterval(timerInterval);
-        showReview();
-      }
-    }, 1000);
+    runTimer();
   } else {
     $("test-timer").style.display = "none";
+    $("pause-btn").style.display = "none";
+  }
+}
+
+function runTimer() {
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    secondsRemaining--;
+    updateTimerDisplay();
+    if (secondsRemaining <= 0) {
+      clearInterval(timerInterval);
+      showReview();
+    }
+  }, 1000);
+}
+
+function togglePause() {
+  if (!timedMode) return;
+  isPaused = !isPaused;
+  if (isPaused) {
+    clearInterval(timerInterval);
+    $("pause-btn").textContent = "▶ Resume";
+    $("timer-display").classList.add("paused");
+  } else {
+    runTimer();
+    $("pause-btn").textContent = "⏸ Pause";
+    $("timer-display").classList.remove("paused");
   }
 }
 
